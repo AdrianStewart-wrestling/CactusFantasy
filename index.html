@@ -1,9 +1,25 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Cactus Wrestling Fantasy Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cactus Wrestling Fantasy</title>
 </head>
 <body>
-    <h1>Welcome to the Cactus Wrestling Fantasy Form!</h1>
-    <!-- Original content goes here -->
+    <h1>Welcome to Cactus Wrestling Fantasy!</h1>
+    <form id="wrestling-form">
+        <label for="wrestler-name">Wrestler Name:</label>
+        <input type="text" id="wrestler-name" name="wrestler-name" required>
+        <br>
+        <label for="wrestler-type">Type:</label>
+        <select id="wrestler-type" name="wrestler-type">
+            <option value="heel">Heel</option>
+            <option value="face">Face</option>
+        </select>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    <script src="script.js"></script>
 </body>
 </html>
