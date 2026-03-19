@@ -490,6 +490,7 @@
     <button class="btn-generate" id="generateBtn" onclick="generateExcel()">
       <span class="icon">📥</span> Download My Scorecard (.xlsx)
     </button>
+    <div id="submitStatus" style="text-align:center;font-size:13px;font-weight:600;color:#27ae60;display:none;">✓ Entry submitted to CACTUS HQ!</div>
     <div class="disclaimer">
       Your scorecard is a fully-formatted Excel file with your picks pre-loaded, a live points column tied to the Results sheet, and a Leaderboard tab. No data is sent to any server — everything happens in your browser.
     </div>
@@ -685,12 +686,47 @@ function showMsg(el, text) { el.textContent = text; el.classList.add('visible');
 // ─────────────────────────────────────────────────────────────────────────────
 // EXCEL GENERATION  (SheetJS)
 // ─────────────────────────────────────────────────────────────────────────────
-function generateExcel() {
+async function generateExcel() {
   if (!validate()) return;
 
   const name  = document.getElementById('entrantName').value.trim();
   const email = document.getElementById('entrantEmail').value.trim();
   const totalSeedCost = Object.values(picks).reduce((s, p) => s + p.seed, 0);
+
+  // ── Submit to Formspree silently ──────────────────────────────────────────
+  const btn = document.getElementById('generateBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="icon">⏳</span> Submitting…';
+
+  try {
+    const payload = {
+      name,
+      email,
+      total_seed_cost: totalSeedCost,
+    };
+    WEIGHTS.forEach(wt => {
+      const p = picks[wt];
+      payload[`${wt}lb`] = `${p.name} (Seed #${p.seed}, ${p.school})`;
+    });
+
+    const res = await fetch('https://formspree.io/f/mzdjorvn', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.ok) {
+      document.getElementById('submitStatus').style.display = 'block';
+      showToast('✓ Entry saved to CACTUS HQ!', 'success');
+    } else {
+      showToast('⚠ Submission failed — but your Excel is still downloading.', 'error');
+    }
+  } catch (err) {
+    showToast('⚠ Could not reach server — Excel download continuing.', 'error');
+  } finally {
+    btn.disabled = false;
+    btn.innerHTML = '<span class="icon">📥</span> Download My Scorecard (.xlsx)';
+  }
 
   const wb = XLSX.utils.book_new();
 
