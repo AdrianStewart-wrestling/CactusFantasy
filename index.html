@@ -709,15 +709,16 @@ async function generateExcel() {
       payload[`${wt}lb`] = `${p.name} (Seed #${p.seed}, ${p.school})`;
     });
 
-    const res = await fetch('https://formspree.io/f/mzdjorvn', {
+    const res = await fetch('https://script.google.com/macros/s/AKfycbyyBGmn6Pew_cwQQncy8DdOzZGzNfAh3XjL3D2Zzdnpzsb6NyiihN8xzh5coyPnlHGmvA/exec', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
 
     if (res.ok) {
+      document.getElementById('submitStatus').innerText = '✓ Entry emailed to CACTUS HQ!';
       document.getElementById('submitStatus').style.display = 'block';
-      showToast('✓ Entry saved to CACTUS HQ!', 'success');
+      showToast('✓ Entry emailed to CACTUS HQ!', 'success');
     } else {
       showToast('⚠ Submission failed — but your Excel is still downloading.', 'error');
     }
