@@ -438,12 +438,12 @@
     <div class="cactus-badge">🌵</div>
     <div class="header-text">
       <h1>CACTUS Wrestling<br><span>2026 NCAA Fantasy Lineup Challenge</span></h1>
-      <p>Pick one wrestler per weight class · Budget: 100 seed points · Download your scorecard instantly</p>
+      <p>Pick one wrestler per weight class · Must spend ≥ 100 seed points · Max one #1, two #2s, three #3s… · Download instantly</p>
     </div>
   </div>
   <div class="budget-bar">
     <div class="budget-inner">
-      <span>Seed Budget Used:</span>
+      <span>Seed Cost (min 100):</span>
       <span class="budget-pill" id="budgetPill">0 / 100</span>
       <span id="budgetStatus">— select your lineup below</span>
     </div>
@@ -482,7 +482,7 @@
         <div class="tile-value" id="totalCostDisplay">0</div>
       </div>
       <div class="cost-tile">
-        <div class="tile-label">Budget Remaining</div>
+        <div class="tile-label">Still Need</div>
         <div class="tile-value" id="remainingDisplay">100</div>
       </div>
     </div>
@@ -505,9 +505,21 @@
 // ─────────────────────────────────────────────────────────────────────────────
 const SEEDS = {"125":[[1,"Luke Lilledahl","PSU","20-0"],[2,"Eddie Ventresca","VT","19-2"],[3,"Nic Bouzakis","OHST","16-2"],[4,"Sheldon Seymour","LEH","19-0"],[5,"Troy Spratley","OKST","16-3"],[6,"Jore Volk","MINN","22-5"],[7,"Nico Provo","STAN","13-5"],[8,"Dean Peterson","IOWA","14-6"],[9,"Maximo Renteria","ORST","20-3"],[10,"Marc-Anthony McGowan","PRIN","15-6"],[11,"Tyler Klinsky","RID","26-3"],[12,"Vincent Robinson","NCST","15-4"],[13,"Stevo Poulin","ISU","15-7"],[14,"Jacob Moran","IND","17-5"],[15,"Koda Holeman","POLY","19-5"],[16,"Ezekiel Witt","NDSU","23-11"],[17,"Jett Strickenberger","WVU","19-7"],[18,"Spencer Moore","ILL","17-8"],[19,"Kysen Terukina","UNC","15-6"],[20,"Diego Sotelo","MICH","13-12"],[21,"Conrad Hendriksen","OKLA","15-12"],[22,"Davis Motyka","PENN","17-5"],[23,"Nicolar Rivera","WIS","18-7"],[24,"Ayden Smith","RUT","16-11"],[25,"Kael Lauridsen","NEB","16-11"],[26,"Cooper Flynn","CHAT","18-4"],[27,"Brady Roark","SDSU","21-7"],[28,"Andrew Binni","NAVY","17-9"],[29,"Tyler Chappell","PITT","13-13"],[30,"Sulayman Bah","COL","23-12"],[31,"Desmond Pleasant","DREX","23-8"],[32,"Mack Mauger","MIZZ","22-14"],[33,"Jace Schafer","BLOO","23-8"]],"133":[[1,"Jax Forrest","OKST","13-0"],[2,"Ben Davino","OHST","27-1"],[3,"Marcus Blaze","PSU","21-1"],[4,"Aaron Seidel","VT","18-1"],[5,"Kyler Larkin","ASU","18-2"],[6,"Drake Ayala","IOWA","13-8"],[7,"Lucas Byrd","ILL","20-2"],[8,"Markel Baker","NIU","26-4"],[9,"Dominick Serrano","UNCO","15-3"],[10,"Maximilian Leete","AMER","16-5"],[11,"Tyler Ferrara","COR","23-7"],[12,"Evan Mougalian","PENN","21-5"],[13,"Jacob Van Dee","NEB","17-6"],[14,"Ethan Berginc","ARMY","16-6"],[15,"Tyler Knox","STAN","14-5"],[16,"Zan Fugitt","WIS","20-6"],[17,"T.K. Davis","GW","24-1"],[18,"Gunner Andrick","WVU","24-8"],[19,"Gage Walker","MIZZ","17-7"],[20,"Julian Farber","UNI","18-9"],[21,"Sean Spidle","NW","15-8"],[22,"Zach Redding","NCST","12-8"],[23,"Braxton Brown","MD","17-9"],[24,"Blake Boarman","PUR","12-15"],[25,"Will Betancourt","RID","23-8"],[26,"Dylan Shawver","RUT","20-11"],[27,"Marcel Lopez","SIUE","26-9"],[28,"Garrett Grice","ISU","6-3"],[29,"Luke Willochell","WYO","15-10"],[30,"Gabe Whisenhunt","ORST","9-8"],[31,"Gable Strickland","LH","26-9"],[32,"Andrew Austin","CMU","20-13"],[33,"Carter Schmidt","OKLA","7-14"]],"141":[[1,"Jesse Mendez","OHST","22-0"],[2,"Sergio Vega","OKST","19-0"],[3,"Brock Hardy","NEB","20-5"],[4,"Anthony Echemendia","ISU","19-3"],[5,"Luke Stanich","LEH","13-0"],[6,"Vince Cornella","COR","19-1"],[7,"Nasir Bailey","IOWA","14-7"],[8,"Vance Vombaur","MINN","21-6"],[9,"Joey Olivieri","RUT","19-2"],[10,"Jack Consiglio","STAN","14-5"],[11,"CJ Composto","PENN","16-4"],[12,"Luke Simcox","UNC","16-6"],[13,"Wyatt Henson","LH","24-5"],[14,"Braeden Davis","PSU","12-5"],[15,"Elijah Griffin","RID","26-7"],[16,"Ryan Jack","NCST","15-7"],[17,"Caedyn Ricciardi","NAVY","18-8"],[18,"Carter Nogle","AF","25-8"],[19,"Haiden Drury","UVU","21-9"],[20,"Julian Tagg","SDSU","18-6"],[21,"Tyler Wells","OKLA","16-9"],[22,"Lorenzo Frezza","COL","23-10"],[23,"Dylan Chappell","BUCK","21-10"],[24,"Nash Singleton","ORST","15-7"],[25,"Tom Crook","VT","20-12"],[26,"Braden Basile","ARMY","17-6"],[27,"Gable Porter","UVA","20-8"],[28,"Pierson Manville","ASU","17-9"],[29,"Jordan Titus","WVU","16-14"],[30,"Dario Lemus","MD","17-13"],[31,"Billy DeKraker","NW","15-12"],[32,"Matthew Martino","PRIN","15-15"],[33,"Aldo Hernandez","APP","18-14"]],"149":[[1,"Shayne Van Ness","PSU","21-0"],[2,"Jaxon Joy","COR","24-1"],[3,"Cross Wasilewski","PENN","24-3"],[4,"Collin Gaj","VT","20-8"],[5,"Koy Buesgens","NCST","21-3"],[6,"Caleb Tyus","SIUE","22-2"],[7,"Ethan Stiles","OHST","15-5"],[8,"Casey Swiderski","OKST","14-5"],[9,"David Evans","UVU","20-5"],[10,"Aden Valencia","STAN","16-7"],[11,"Lachlan McNeil","MICH","17-6"],[12,"Carter Young","MD","15-4"],[13,"Joseph Zargo","WIS","18-6"],[14,"Caleb Rathjen","UNI","9-6"],[15,"Ryder Block","IOWA","13-8"],[16,"Jacob Frost","ISU","17-7"],[17,"Lucas Kapusta","LH","25-4"],[18,"Eugene Harney","MORG","28-4"],[19,"Brock Herman","UALR","13-3"],[20,"Chance Lamer","NEB","17-8"],[21,"Gabe Willochell","WYO","17-8"],[22,"Eligh Rivera","PRIN","13-9"],[23,"Max Petersen","NDSU","15-8"],[24,"Andrew Clark","RUT","16-10"],[25,"Michael Gioffre","ILL","16-10"],[26,"Anderson Heap","DAV","20-9"],[27,"Andre Gonzales","POLY","17-11"],[28,"Kade Brown","PITT","14-8"],[29,"Kaden Cassidy","GMU","15-4"],[30,"Dylan Layton","RID","25-9"],[31,"Ryan Michaels","EDIN","24-9"],[32,"Clayton Jones","MSU","11-15"],[33,"Austin McBurney","BRWN","21-13"]],"157":[[1,"PJ Duke","PSU","19-1"],[2,"Antrell Taylor","NEB","22-3"],[3,"Meyer Shapiro","COR","15-1"],[4,"Kaleb Larkin","ASU","24-2"],[5,"Landon Robideau","OKST","16-2"],[6,"Jude Swisher","PENN","20-3"],[7,"Kannon Webster","ILL","20-4"],[8,"Brandon Cannon","OHST","18-2"],[9,"Daniel Cardenas","STAN","17-3"],[10,"Logan Rozynski","LEH","13-3"],[11,"Ty Watters","WVU","22-3"],[12,"Vinny Zerban","ISU","15-4"],[13,"Derek Raike","OHIO","21-5"],[14,"Ethen Miller","VT","16-6"],[15,"Cameron Catrabone","MICH","18-8"],[16,"Cael Swensen","SDSU","24-7"],[17,"Luke Mechler","WIS","18-8"],[18,"DJ McGee","GMU","24-4"],[19,"Kai Owen","COL","18-7"],[20,"Jimmy Harrington","HARV","21-8"],[21,"Charlie Millard","MINN","18-9"],[22,"Colton Washleski","UVA","20-10"],[23,"Kaleb Burgess","BUFF","18-7"],[24,"Jaivon Jones","UALR","19-9"],[25,"Mason Shrader","CMU","24-10"],[26,"Jonathan Ley","NAVY","26-12"],[27,"Dylan Evans","PITT","21-8"],[28,"Gavin Drexler","NDSU","16-10"],[29,"Bryce Lowery","IND","12-11"],[30,"Laird Root","UNC","16-11"],[31,"Garrett McChesney","EDIN","12-14"],[32,"Jeb Prechtel","BELL","18-14"],[33,"Yannis Charles","MORG","5-8"]],"165":[[1,"Mitchell Mesenbrink","PSU","22-0"],[2,"Joey Blaze","PUR","22-1"],[3,"Mikey Caliendo","IOWA","18-4"],[4,"Nicco Ruiz","ASU","23-5"],[5,"LaDarion Lockett","OKST","16-2"],[6,"LJ Araujo","NEB","18-8"],[7,"Max Brignola","LEH","17-4"],[8,"Matty Bianchi","UALR","19-2"],[9,"Bryce Hepner","UNC","15-4"],[10,"Will Denny","NCST","16-4"],[11,"Ryder Downey","UNI","21-5"],[12,"Cesar Alvan","COL","27-8"],[13,"Andrew Sparks","MINN","19-6"],[14,"Andrew Barbosa","RUT","18-8"],[15,"Connor Euton","ISU","17-7"],[16,"Paddy Gallagher","OHST","15-8"],[17,"Braeden Scoles","ILL","16-9"],[18,"Gunner Filipowicz","ARMY","19-6"],[19,"Noah Mulvaney","BUCK","25-7"],[20,"Ty Whalen","PRIN","20-7"],[21,"Brock Woodcock","SIUE","28-9"],[22,"Matthew Olguin","ORST","17-5"],[23,"Chris Earnest","KENT","18-6"],[24,"Sean Seefeldt","PENN","20-7"],[25,"Mac Church","VT","24-10"],[26,"Tyler Lillard","IND","12-9"],[27,"EJ Parco","STAN","12-7"],[28,"Cody Goebel","WIS","12-11"],[29,"Ryan Burgos","EDIN","20-7"],[30,"Thomas Snipes","CIT","22-7"],[31,"Jared Keslar","PITT","15-13"],[32,"Cody Walsh","DREX","27-13"],[33,"Ryan Vigil","VMI","14-9"]],"174":[[1,"Levi Haines","PSU","21-0"],[2,"Simon Ruiz","COR","16-0"],[3,"Christopher Minto","NEB","20-5"],[4,"Carson Kharchla","OHST","18-4"],[5,"Patrick Kennedy","IOWA","18-4"],[6,"Matty Singleton","NCST","16-3"],[7,"Cam Steed","MIZZ","15-5"],[8,"Alex Facundo","OKST","16-6"],[9,"Beau Mantanona","MICH","21-7"],[10,"Myles Takats","BUCK","22-6"],[11,"MJ Gaitan","ISU","16-6"],[12,"Carter Schubert","OKLA","19-6"],[13,"Carter Baer","BING","18-4"],[14,"Moses Espinoza-Owens","SDSU","27-8"],[15,"Danny Wask","NAVY","22-4"],[16,"Nick Fine","COL","24-8"],[17,"Jared Simma","UNI","14-9"],[18,"Colin Kelly","ILL","18-8"],[19,"Logan Messer","GMU","26-6"],[20,"Daschle Lamer","ORST","19-3"],[21,"Lenny Pinto","RUT","13-10"],[22,"Brody Baumann","PUR","16-8"],[23,"Luca Augustine","PITT","12-6"],[24,"Garrett Thompson","OHIO","16-3"],[25,"Sergio Desiante","VT","20-13"],[26,"Derek Gilcher","IND","14-10"],[27,"Collin Carrigan","UNC","13-10"],[28,"Holden Garcia","PRIN","21-10"],[29,"Avery Bassett","LH","22-7"],[30,"Riley Davis","WYO","11-10"],[31,"Cael Valencia","ASU","16-10"],[32,"Luke Condon","WIS","13-13"],[33,"Grant O'Dell","BELL","24-8"]],"184":[[1,"Rocco Welsh","PSU","20-0"],[2,"Aeoden Sinclair","MIZZ","30-1"],[3,"Max McEnelly","MINN","19-2"],[4,"James Conway","F&M","32-2"],[5,"Brock Mantanona","MICH","19-6"],[6,"Eddie Neitenbach","WYO","20-6"],[7,"Angelo Ferrari","IOWA","11-3"],[8,"Silas Allred","NEB","17-7"],[9,"Chris Moore","ILL","18-10"],[10,"Caleb Campos","AMER","25-6"],[11,"Shane Cartagena-Walsh","RUT","24-8"],[12,"Dylan Fishback","OHST","18-8"],[13,"Isaac Dean","ISU","17-7"],[14,"Jaden Bullock","VT","20-10"],[15,"Sal Perrine","OHIO","19-4"],[16,"Rylan Rogers","LEH","18-6"],[17,"Ian Bush","WVU","19-10"],[18,"Jake Dailey","UNC","18-4"],[19,"Jared McGill","EDIN","17-3"],[20,"Brian Soldano","OKLA","13-8"],[21,"Tomas Brooker","APP","26-8"],[22,"Zack Ryder","OKST","12-8"],[23,"Ceasar Garza","POLY","18-2"],[24,"Joe Curtis","COL","26-2"],[25,"Malachi DuVall","GMU","24-5"],[26,"Chase Kranitz","PITT","15-9"],[27,"Aidan Brenot","NDSU","16-9"],[28,"Abraham Wojcikiewicz","STAN","17-11"],[29,"Nick Fox","UNI","12-5"],[30,"Tyler Bienus","BUCK","19-14"],[31,"Mahonri Rushton","UNCO","17-14"],[32,"Caleb Uhlenhopp","UVU","16-14"],[33,"Sam Goin","IND","12-8"]],"197":[[1,"Josh Barr","PSU","19-0"],[2,"Rocky Elam","ISU","18-0"],[3,"Stephen Little","UALR","15-2"],[4,"Sonny Sasso","VT","25-5"],[5,"Joey Novak","WYO","17-3"],[6,"Justin Rademacher","ORST","23-3"],[7,"Cody Merrill","OKST","17-4"],[8,"DJ Parker","OKLA","19-8"],[9,"Angelo Posada","STAN","16-5"],[10,"Mac Stout","PITT","19-4"],[11,"Camden McDanel","NEB","20-6"],[12,"Luke Geog","OHST","16-7"],[13,"Bennett Berge","SDSU","16-5"],[14,"Gabe Sollars","IND","15-10"],[15,"Remy Cotton","RUT","18-7"],[16,"Branson John","MD","25-7"],[17,"Dillon Bechtold","BUCK","15-4"],[18,"Andrew Reall","BRWN","34-4"],[19,"Zayne Lehman","OHIO","19-2"],[20,"Wyatt Ingham","WIS","17-8"],[21,"Rune Lawrence","WVU","17-11"],[22,"Devin Wasley","NDSU","21-10"],[23,"Mikey Squires","BING","19-3"],[24,"Brock Zurawski","RID","22-5"],[25,"Evan Bates","MIZZ","21-9"],[26,"Ben Vanadia","PUR","15-10"],[27,"Gabe Arnold","IOWA","18-7"],[28,"Kael Wisler","MSU","25-10"],[29,"Colton Hawks","ASU","7-9"],[30,"Kade Rule","CHAT","18-5"],[31,"Kael Bennie","UVU","15-16"],[32,"Blake Schaffer","KENT","22-9"],[33,"Karson Tompkins","AF","21-12"]],"285":[[1,"Yonger Bastida","ISU","25-0"],[2,"Isaac Trumble","NCST","16-0"],[3,"Taye Ghadiali","MICH","23-2"],[4,"AJ Ferrari","NEB","15-3"],[5,"Nick Feldman","OHST","23-5"],[6,"Nathan Taylor","LEH","16-3"],[7,"Konner Doucet","OKST","17-3"],[8,"Ben Kueter","IOWA","9-7"],[9,"Cole Mirasola","PSU","17-6"],[10,"David Szuba","ASU","22-9"],[11,"Devon Dawson","NIU","31-4"],[12,"Braxton Amos","WIS","20-7"],[13,"Spencer Lanosga","NAVY","20-8"],[14,"Koy Hopke","MINN","20-9"],[15,"Brady Colbert","ARMY","18-6"],[16,"Jimmy Mullen","VT","22-7"],[17,"Vincent Mueller","COL","25-6"],[18,"Christian Carroll","WYO","19-6"],[19,"Nate Schon","DREX","18-5"],[20,"Dayton Pitzer","PITT","16-6"],[21,"Juan Mora","OKLA","19-7"],[22,"Trevor Tinker","POLY","11-4"],[23,"Stephan Monchery","APP","23-7"],[24,"Connor Barket","DUKE","23-7"],[25,"Alex Semenenko","BRWN","25-7"],[26,"Luke Luffman","ILL","14-7"],[27,"Hunter Catka","RUT","20-9"],[28,"Jarrett Stoner","MIZZ","23-14"],[29,"Luke Rasmussen","SDSU","11-11"],[30,"Jack Forbes","UVU","19-12"],[31,"Brenan Morgan","UVA","13-10"],[32,"Emmanuel Ulrich","AMER","21-14"],[33,"Mason Rebuck","BLOO","22-8"]]};
 
-const WEIGHTS   = ['125','133','141','149','157','165','174','184','197','285'];
-const BUDGET    = 100;
-const picks     = {};   // wt -> {seed, name, school, record}
+const WEIGHTS    = ['125','133','141','149','157','165','174','184','197','285'];
+const BUDGET_MIN = 100;  // lineup must cost AT LEAST this many seed points
+const picks      = {};   // wt -> {seed, name, school, record}
+
+// How many times seed N is picked across all weights except `excludeWt`
+function seedCount(seedNum, excludeWt = null) {
+  return Object.entries(picks)
+    .filter(([wt]) => wt !== excludeWt)
+    .filter(([, p]) => p.seed === seedNum).length;
+}
+
+// Would picking seedNum at wt violate the "max N of seed #N" rule?
+function wouldViolateSeedLimit(seedNum, wt) {
+  return seedCount(seedNum, wt) >= seedNum;
+}
 
 // ─────────────────────────────────────────────────────────────────────────────
 // BUILD WEIGHT CARDS
@@ -563,11 +575,19 @@ function filterList(input, listId) {
 }
 
 function selectWrestler(row) {
-  const wt = row.dataset.wt;
-  const seed = parseInt(row.dataset.seed);
-  const name = row.dataset.name;
+  const wt     = row.dataset.wt;
+  const seed   = parseInt(row.dataset.seed);
+  const name   = row.dataset.name;
   const school = row.dataset.school;
   const record = row.dataset.record;
+
+  // Check seed-count limit before accepting the pick
+  if (wouldViolateSeedLimit(seed, wt)) {
+    const limit = seed;
+    const used  = seedCount(seed, wt);
+    showToast(`⚠ Can't pick more than ${limit} #${seed} seed${limit>1?'s':''} (you have ${used} already)`, 'error');
+    return;
+  }
 
   // Deselect previous in same weight
   document.querySelectorAll(`#list-${wt} .wrestler-row.active`).forEach(r => r.classList.remove('active'));
@@ -584,10 +604,23 @@ function selectWrestler(row) {
   badge.textContent = `#${seed}`;
   badge.className = 'seed-badge ' + (seed <= 4 ? 'low' : seed <= 12 ? 'mid' : 'high');
 
-  // Collapse card
+  // Collapse card, re-render disabled states across all open lists
   document.getElementById(`card-${wt}`).classList.remove('open');
-
+  refreshDisabledRows();
   updateTotals();
+}
+
+// Grey out + mark rows that would violate seed limits given current picks
+function refreshDisabledRows() {
+  document.querySelectorAll('.wrestler-row').forEach(row => {
+    if (row.classList.contains('active')) return;  // already selected here, keep it
+    const seed = parseInt(row.dataset.seed);
+    const wt   = row.dataset.wt;
+    const blocked = wouldViolateSeedLimit(seed, wt);
+    row.style.opacity = blocked ? '0.35' : '';
+    row.style.pointerEvents = blocked ? 'none' : '';
+    row.title = blocked ? `Max ${seed} #${seed}-seed pick${seed>1?'s':''} already used` : '';
+  });
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -596,40 +629,53 @@ function selectWrestler(row) {
 function updateTotals() {
   const numPicks  = Object.keys(picks).length;
   const totalCost = Object.values(picks).reduce((s, p) => s + p.seed, 0);
-  const remaining = BUDGET - totalCost;
-  const over      = totalCost > BUDGET;
+  const stillNeed = Math.max(0, BUDGET_MIN - totalCost);
+  const met       = totalCost >= BUDGET_MIN;
 
-  document.getElementById('pickCount').textContent       = `${numPicks} / 10`;
-  document.getElementById('totalCostDisplay').textContent = totalCost;
-  document.getElementById('remainingDisplay').textContent  = remaining;
-  document.getElementById('budgetPill').textContent       = `${totalCost} / ${BUDGET}`;
+  document.getElementById('pickCount').textContent        = `${numPicks} / 10`;
+  document.getElementById('totalCostDisplay').textContent  = totalCost;
+  document.getElementById('remainingDisplay').textContent  = stillNeed > 0 ? stillNeed : '✓';
+  document.getElementById('budgetPill').textContent        = `${totalCost} / ${BUDGET_MIN}`;
 
   const pill = document.getElementById('budgetPill');
-  pill.className = `budget-pill ${over ? 'over' : totalCost >= 80 ? '' : 'ok'}`;
+  pill.className = `budget-pill ${met ? 'ok' : totalCost >= 80 ? '' : 'over'}`;
 
   const costTile = document.getElementById('costTile');
-  costTile.className = `cost-tile ${over ? 'highlight' : 'ok'}`;
+  costTile.className = `cost-tile ${met ? 'ok' : 'highlight'}`;
 
   document.getElementById('budgetStatus').textContent =
-    over      ? `⚠ Over budget by ${-remaining}` :
-    numPicks === 10 ? `✓ Lineup complete!` :
-    `${10 - numPicks} pick${10 - numPicks !== 1 ? 's' : ''} remaining`;
+    numPicks < 10  ? `${10 - numPicks} pick${10 - numPicks !== 1 ? 's' : ''} remaining` :
+    !met           ? `⚠ Need ${stillNeed} more seed points to hit 100` :
+                     `✓ Lineup valid — cost: ${totalCost}`;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
 // VALIDATE
 // ─────────────────────────────────────────────────────────────────────────────
 function validate() {
-  const msg = document.getElementById('validationMsg');
+  const msg  = document.getElementById('validationMsg');
   const name  = document.getElementById('entrantName').value.trim();
   const email = document.getElementById('entrantEmail').value.trim();
   const numPicks  = Object.keys(picks).length;
   const totalCost = Object.values(picks).reduce((s, p) => s + p.seed, 0);
 
-  if (!name)          { showMsg(msg, '⚠ Please enter your name.');           return false; }
+  if (!name)  { showMsg(msg, '⚠ Please enter your name.'); return false; }
   if (!email || !email.includes('@')) { showMsg(msg, '⚠ Please enter a valid email.'); return false; }
-  if (numPicks < 10)  { showMsg(msg, `⚠ Please pick all 10 weight classes (${numPicks}/10 done).`); return false; }
-  if (totalCost > BUDGET) { showMsg(msg, `⚠ Your lineup costs ${totalCost} — over the ${BUDGET}-point budget by ${totalCost - BUDGET}.`); return false; }
+  if (numPicks < 10) { showMsg(msg, `⚠ Pick all 10 weight classes (${numPicks}/10 done).`); return false; }
+  if (totalCost < BUDGET_MIN) {
+    showMsg(msg, `⚠ Lineup costs ${totalCost} seed points — need at least ${BUDGET_MIN}. Add ${BUDGET_MIN - totalCost} more.`);
+    return false;
+  }
+
+  // Double-check seed limits (shouldn't be reachable but safety net)
+  const seedTally = {};
+  for (const [wt, p] of Object.entries(picks)) {
+    seedTally[p.seed] = (seedTally[p.seed] || 0) + 1;
+    if (seedTally[p.seed] > p.seed) {
+      showMsg(msg, `⚠ Too many #${p.seed} seeds picked (max ${p.seed}).`);
+      return false;
+    }
+  }
 
   msg.classList.remove('visible');
   return true;
@@ -751,6 +797,7 @@ function showToast(msg, type='') {
 // INIT
 // ─────────────────────────────────────────────────────────────────────────────
 buildCards();
+refreshDisabledRows();
 updateTotals();
 </script>
 </body>
